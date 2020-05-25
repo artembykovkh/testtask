@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,4 +23,10 @@ public class User {
     private String email;
 
     private String password;
+
+    @ElementCollection
+    private Set<String> favoriteActors;
+
+    @ElementCollection
+    private Set<String> watchedShows;
 }
